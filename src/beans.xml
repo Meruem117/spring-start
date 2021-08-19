@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user1" class="start.spring.bean.User1"/>
+
+    <bean id="user2" class="start.spring.bean.User2">
+        <property name="name" value="John"/>
+
+        <!--<property name="name">-->
+        <!--    <null/>-->
+        <!--</property>-->
+
+        <!--<property name="name">-->
+        <!--    <value><![CDATA[<John>]]></value>-->
+        <!--</property>-->
+    </bean>
+
+    <!--xmlns:p="http://www.springframework.org/schema/p"-->
+    <!--<bean id="user2" class="start.spring.bean.User2" p:name="John"/>-->
+
+    <bean id="user3" class="start.spring.bean.User3">
+        <constructor-arg name="name" value="John"/>
+    </bean>
+
+    <!--Same as user2-->
+    <bean id="user" class="start.spring.bean.User">
+        <property name="name" value="John"/>
+    </bean>
+
+    <bean id="student" class="start.spring.bean.Student">
+        <property name="id" value="1"/>
+        <property name="name" value="John"/>
+        <property name="teacher" ref="teacher"/>
+        <!--<property name="teacher.name" value="Carter"/>-->
+        <!--<property name="teacher">-->
+        <!--    <bean id="teacher" class="start.spring.bean.Teacher">-->
+        <!--        <property name="name" value="Finch"/>-->
+        <!--    </bean>-->
+        <!--</property>-->
+    </bean>
+    <bean id="teacher" class="start.spring.bean.Teacher">
+        <property name="name" value="Finch"/>
+    </bean>
+
+</beans>
