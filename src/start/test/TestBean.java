@@ -2,7 +2,11 @@ package start.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import start.spring.bean.*;
+import start.spring.bean.base.User1;
+import start.spring.bean.base.User2;
+import start.spring.bean.base.User3;
+import start.spring.bean.collection.Course;
+import start.spring.bean.school.Student;
 import start.spring.service.UserService;
 
 /**
@@ -45,5 +49,19 @@ public class TestBean {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Student student = context.getBean("student", Student.class);
         student.test();
+    }
+
+    @org.junit.Test
+    public void TestCollection() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Course course = context.getBean("course", Course.class);
+        course.test();
+    }
+
+    @org.junit.Test
+    public void TestUtil() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("utils.xml");
+        Course course = context.getBean("courses", Course.class);
+        course.test();
     }
 }

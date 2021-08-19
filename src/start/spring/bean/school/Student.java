@@ -1,4 +1,4 @@
-package start.spring.bean;
+package start.spring.bean.school;
 
 /**
  * @auther: Meruem117

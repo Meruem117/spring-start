@@ -3,9 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user1" class="start.spring.bean.User1"/>
+    <bean id="user1" class="start.spring.bean.base.User1"/>
 
-    <bean id="user2" class="start.spring.bean.User2">
+    <bean id="user2" class="start.spring.bean.base.User2">
         <property name="name" value="John"/>
 
         <!--<property name="name">-->
@@ -18,9 +18,9 @@
     </bean>
 
     <!--xmlns:p="http://www.springframework.org/schema/p"-->
-    <!--<bean id="user2" class="start.spring.bean.User2" p:name="John"/>-->
+    <!--<bean id="user2" class="start.spring.bean.base.User2" p:name="John"/>-->
 
-    <bean id="user3" class="start.spring.bean.User3">
+    <bean id="user3" class="start.spring.bean.base.User3">
         <constructor-arg name="name" value="John"/>
     </bean>
 
@@ -29,19 +29,59 @@
         <property name="name" value="John"/>
     </bean>
 
-    <bean id="student" class="start.spring.bean.Student">
+    <bean id="student" class="start.spring.bean.school.Student">
         <property name="id" value="1"/>
         <property name="name" value="John"/>
         <property name="teacher" ref="teacher"/>
         <!--<property name="teacher.name" value="Carter"/>-->
         <!--<property name="teacher">-->
-        <!--    <bean id="teacher" class="start.spring.bean.Teacher">-->
+        <!--    <bean id="teacher" class="start.spring.bean.school.Teacher">-->
         <!--        <property name="name" value="Finch"/>-->
         <!--    </bean>-->
         <!--</property>-->
     </bean>
-    <bean id="teacher" class="start.spring.bean.Teacher">
+    <bean id="teacher" class="start.spring.bean.school.Teacher">
         <property name="name" value="Finch"/>
+    </bean>
+
+    <bean id="course" class="start.spring.bean.collection.Course">
+        <property name="courses">
+            <array>
+                <value>Chinese</value>
+                <value>Maths</value>
+                <value>English</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>LI</value>
+                <value>ST</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="one" value="one"/>
+                <entry key="two" value="two"/>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>Spring</value>
+                <value>SpringMVC</value>
+            </set>
+        </property>
+        <property name="lessons">
+            <list>
+                <ref bean="lesson1"/>
+                <ref bean="lesson2"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="lesson1" class="start.spring.bean.collection.Lesson">
+        <property name="name" value="Spring"/>
+    </bean>
+    <bean id="lesson2" class="start.spring.bean.collection.Lesson">
+        <property name="name" value="SpringMVC"/>
     </bean>
 
 </beans>

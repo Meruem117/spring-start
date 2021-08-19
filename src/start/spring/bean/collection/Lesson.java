@@ -1,9 +1,9 @@
-package start.spring.bean;
+package start.spring.bean.collection;
 
 /**
  * @auther: Meruem117
  */
-public class Teacher {
+public class Lesson {
     private String name;
 
     public void setName(String name) {
@@ -12,7 +12,7 @@ public class Teacher {
 
     @Override
     public String toString() {
-        return "Teacher{" +
+        return "Lesson{" +
                 "name='" + name + '\'' +
                 '}';
     }

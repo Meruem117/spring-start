@@ -11,6 +11,12 @@
           <file>file://$MODULE_DIR$/src/beans.xml</file>
           <file>file://$MODULE_DIR$/src/services.xml</file>
         </fileset>
+        <fileset id="fileset3" name="Utils" removed="false">
+          <file>file://$MODULE_DIR$/src/beans.xml</file>
+          <file>file://$MODULE_DIR$/src/daos.xml</file>
+          <file>file://$MODULE_DIR$/src/services.xml</file>
+          <file>file://$MODULE_DIR$/src/utils.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>

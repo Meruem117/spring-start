@@ -1,12 +1,12 @@
-package start.spring.bean;
+package start.spring.bean.base;
 
 /**
  * @auther: Meruem117
  */
-public class User2 {
+public class User3 {
     private String name;
 
-    public void setName(String name) {
+    public User3(String name) {
         this.name = name;
     }
 
