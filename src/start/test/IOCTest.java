@@ -2,18 +2,20 @@ package start.test;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import start.spring.bean.User;
-import start.spring.bean.base.User1;
-import start.spring.bean.base.User2;
-import start.spring.bean.base.User3;
-import start.spring.bean.collection.Course;
-import start.spring.bean.school.Student;
-import start.spring.bean.autowire.Employee;
-import start.spring.bean.life.Life;
-import start.spring.service.UserService;
-import start.spring.bean.annotation.Base;
-import start.spring.service.annotation.BaseService;
+import start.spring.ioc.bean.User;
+import start.spring.ioc.bean.base.User1;
+import start.spring.ioc.bean.base.User2;
+import start.spring.ioc.bean.base.User3;
+import start.spring.ioc.bean.collection.Course;
+import start.spring.ioc.bean.school.Student;
+import start.spring.ioc.bean.autowire.Employee;
+import start.spring.ioc.bean.life.Life;
+import start.spring.ioc.config.SpringConfig;
+import start.spring.ioc.service.UserService;
+import start.spring.ioc.bean.annotation.Base;
+import start.spring.ioc.service.annotation.BaseService;
 
 /**
  * @auther: Meruem117
@@ -96,6 +98,14 @@ public class IOCTest {
     @Test
     public void TestBaseService() {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        BaseService baseService = context.getBean("baseService", BaseService.class);
+        baseService.test();
+    }
+
+    @Test
+    public void TestConfig() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+
         BaseService baseService = context.getBean("baseService", BaseService.class);
         baseService.test();
     }

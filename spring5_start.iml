@@ -4,21 +4,13 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Bean" removed="false">
-          <file>file://$MODULE_DIR$/src/bean.xml</file>
-        </fileset>
-        <fileset id="fileset2" name="Daos" removed="false">
-          <file>file://$MODULE_DIR$/src/daos.xml</file>
           <file>file://$MODULE_DIR$/src/beans.xml</file>
-          <file>file://$MODULE_DIR$/src/services.xml</file>
         </fileset>
-        <fileset id="fileset3" name="Utils" removed="false">
-          <file>file://$MODULE_DIR$/src/beans.xml</file>
+        <fileset id="fileset2" name="Dao" removed="false">
           <file>file://$MODULE_DIR$/src/daos.xml</file>
-          <file>file://$MODULE_DIR$/src/services.xml</file>
-          <file>file://$MODULE_DIR$/src/utils.xml</file>
         </fileset>
-        <fileset id="fileset4" name="Annotation" removed="false">
-          <file>file://$MODULE_DIR$/src/annotation.xml</file>
+        <fileset id="fileset3" name="Service" removed="false">
+          <file>file://$MODULE_DIR$/src/services.xml</file>
         </fileset>
       </configuration>
     </facet>
