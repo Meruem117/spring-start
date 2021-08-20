@@ -89,5 +89,14 @@
 
     <!--factory-->
     <bean id="factory" class="start.spring.bean.factory.Factory"/>
+    <!--<bean id="factory" class="start.spring.bean.factory.Factory" scope="singleton"/>-->
+    <!--<bean id="factory" class="start.spring.bean.factory.Factory" scope="prototype"/>-->
+
+    <!--LifeCycle-->
+    <bean id="life" class="start.spring.bean.life.Life" init-method="init" destroy-method="destroy">
+        <property name="name" value="life"/>
+    </bean>
+    <!--affect all beans-->
+    <!--<bean id="post" class="start.spring.bean.life.Post"/>-->
 
 </beans>

@@ -2,12 +2,12 @@ package start.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import start.spring.bean.life.Life;
 import start.spring.bean.User;
 import start.spring.bean.base.User1;
 import start.spring.bean.base.User2;
 import start.spring.bean.base.User3;
 import start.spring.bean.collection.Course;
-import start.spring.bean.factory.Factory;
 import start.spring.bean.school.Student;
 import start.spring.service.UserService;
 
@@ -72,5 +72,13 @@ public class TestBean {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         User user = context.getBean("factory", User.class);
         System.out.println(user);
+    }
+
+    @org.junit.Test
+    public void TestLife() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Life life = context.getBean("life", Life.class);
+        System.out.println(4);
+        ((ClassPathXmlApplicationContext) context).close();
     }
 }
