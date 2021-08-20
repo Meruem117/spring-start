@@ -2,20 +2,22 @@ package start.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import start.spring.bean.autowire.Employee;
-import start.spring.bean.life.Life;
 import start.spring.bean.User;
 import start.spring.bean.base.User1;
 import start.spring.bean.base.User2;
 import start.spring.bean.base.User3;
 import start.spring.bean.collection.Course;
 import start.spring.bean.school.Student;
+import start.spring.bean.autowire.Employee;
+import start.spring.bean.life.Life;
 import start.spring.service.UserService;
+import start.spring.bean.annotation.Base;
+import start.spring.service.annotation.BaseService;
 
 /**
  * @auther: Meruem117
  */
-public class TestBean {
+public class IOCTest {
     @org.junit.Test
     public void TestUser1() {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
@@ -81,5 +83,19 @@ public class TestBean {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Employee employee = context.getBean("employee", Employee.class);
         System.out.println(employee);
+    }
+
+    @org.junit.Test
+    public void TestBase() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Base base = context.getBean("base", Base.class);
+        base.test();
+    }
+
+    @org.junit.Test
+    public void TestBaseService() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        BaseService baseService = context.getBean("baseService", BaseService.class);
+        baseService.test();
     }
 }
