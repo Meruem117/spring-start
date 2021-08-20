@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--base-->
     <bean id="user1" class="start.spring.bean.base.User1"/>
 
     <bean id="user2" class="start.spring.bean.base.User2">
@@ -29,6 +30,7 @@
         <property name="name" value="John"/>
     </bean>
 
+    <!--school-->
     <bean id="student" class="start.spring.bean.school.Student">
         <property name="id" value="1"/>
         <property name="name" value="John"/>
@@ -44,6 +46,7 @@
         <property name="name" value="Finch"/>
     </bean>
 
+    <!--collection-->
     <bean id="course" class="start.spring.bean.collection.Course">
         <property name="courses">
             <array>
@@ -83,5 +86,8 @@
     <bean id="lesson2" class="start.spring.bean.collection.Lesson">
         <property name="name" value="SpringMVC"/>
     </bean>
+
+    <!--factory-->
+    <bean id="factory" class="start.spring.bean.factory.Factory"/>
 
 </beans>
