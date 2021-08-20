@@ -2,6 +2,7 @@ package start.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import start.spring.bean.autowire.Employee;
 import start.spring.bean.life.Life;
 import start.spring.bean.User;
 import start.spring.bean.base.User1;
@@ -61,13 +62,6 @@ public class TestBean {
     }
 
     @org.junit.Test
-    public void TestUtil() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("utils.xml");
-        Course course = context.getBean("courses", Course.class);
-        course.test();
-    }
-
-    @org.junit.Test
     public void TestFactory() {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         User user = context.getBean("factory", User.class);
@@ -80,5 +74,12 @@ public class TestBean {
         Life life = context.getBean("life", Life.class);
         System.out.println(4);
         ((ClassPathXmlApplicationContext) context).close();
+    }
+
+    @org.junit.Test
+    public void TestAutowire() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Employee employee = context.getBean("employee", Employee.class);
+        System.out.println(employee);
     }
 }

@@ -30,5 +30,7 @@
     <orderEntry type="library" name="Spring-5.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="junit-4.12" level="project" />
     <orderEntry type="library" name="hamcrest-core-1.3" level="project" />
+    <orderEntry type="library" name="druid-1.1.9" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.47-bin" level="project" />
   </component>
 </module>

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--base-->
     <bean id="user1" class="start.spring.bean.base.User1"/>
@@ -18,7 +23,6 @@
         <!--</property>-->
     </bean>
 
-    <!--xmlns:p="http://www.springframework.org/schema/p"-->
     <!--<bean id="user2" class="start.spring.bean.base.User2" p:name="John"/>-->
 
     <bean id="user3" class="start.spring.bean.base.User3">
@@ -79,6 +83,7 @@
                 <ref bean="lesson2"/>
             </list>
         </property>
+        <property name="utils" ref="utils"/>
     </bean>
     <bean id="lesson1" class="start.spring.bean.collection.Lesson">
         <property name="name" value="Spring"/>
@@ -86,6 +91,11 @@
     <bean id="lesson2" class="start.spring.bean.collection.Lesson">
         <property name="name" value="SpringMVC"/>
     </bean>
+    <util:list id="utils">
+        <value>u1</value>
+        <value>u2</value>
+        <value>u3</value>
+    </util:list>
 
     <!--factory-->
     <bean id="factory" class="start.spring.bean.factory.Factory"/>
@@ -98,5 +108,25 @@
     </bean>
     <!--affect all beans-->
     <!--<bean id="post" class="start.spring.bean.life.Post"/>-->
+
+    <!--Autowire-->
+    <!--<bean id="employee" class="start.spring.bean.autowire.Employee" autowire="byName"/>-->
+    <bean id="employee" class="start.spring.bean.autowire.Employee" autowire="byType"/>
+    <bean id="department" class="start.spring.bean.autowire.Department">
+        <property name="name" value="dept"/>
+    </bean>
+
+    <!--druid data source-->
+    <context:property-placeholder location="jdbc.properties"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/start"/>-->
+        <!--<property name="username" value="root"/>-->
+        <!--<property name="password" value="abc123"/>-->
+    </bean>
 
 </beans>
