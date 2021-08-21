@@ -9,6 +9,9 @@
         <fileset id="fileset" name="Aop" removed="false">
           <file>file://$MODULE_DIR$/src/aop.xml</file>
         </fileset>
+        <fileset id="fileset2" name="Jdbc" removed="false">
+          <file>file://$MODULE_DIR$/src/jdbc.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
