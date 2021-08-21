@@ -33,6 +33,10 @@
     <bean id="user" class="start.spring.ioc.bean.User">
         <property name="name" value="John"/>
     </bean>
+    <bean id="userDao" class="start.spring.ioc.dao.UserDaoImpl"/>
+    <bean id="userService" class="start.spring.ioc.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
 
     <!--school-->
     <bean id="student" class="start.spring.ioc.bean.school.Student">
