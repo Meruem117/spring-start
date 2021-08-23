@@ -1,4 +1,4 @@
-package start.test;
+package start.spring;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -15,7 +15,7 @@ import java.util.List;
 public class JdbcTest {
     @Test
     public void addTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         UserService userService = context.getBean("userService", UserService.class);
 
         User user = new User();
@@ -28,7 +28,7 @@ public class JdbcTest {
 
     @Test
     public void updateTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         UserService userService = context.getBean("userService", UserService.class);
 
         User user = new User();
@@ -41,7 +41,7 @@ public class JdbcTest {
 
     @Test
     public void deleteTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         UserService userService = context.getBean("userService", UserService.class);
 
         userService.deleteUser(5);
@@ -49,7 +49,7 @@ public class JdbcTest {
 
     @Test
     public void selectCountTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         UserService userService = context.getBean("userService", UserService.class);
 
         int count = userService.selectCount();
@@ -58,7 +58,7 @@ public class JdbcTest {
 
     @Test
     public void getUserByIdTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         UserService userService = context.getBean("userService", UserService.class);
 
         User user = userService.getUserById(1);
@@ -67,7 +67,7 @@ public class JdbcTest {
 
     @Test
     public void getUserListTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         UserService userService = context.getBean("userService", UserService.class);
 
         List<User> list = userService.getUserList();
@@ -78,7 +78,7 @@ public class JdbcTest {
 
     @Test
     public void batchAddTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         UserService userService = context.getBean("userService", UserService.class);
 
         List<Object[]> list = new ArrayList<>();
@@ -92,7 +92,7 @@ public class JdbcTest {
 
     @Test
     public void batchUpdateTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         UserService userService = context.getBean("userService", UserService.class);
 
         List<Object[]> list = new ArrayList<>();
@@ -106,7 +106,7 @@ public class JdbcTest {
 
     @Test
     public void batchDeleteTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         UserService userService = context.getBean("userService", UserService.class);
 
         List<Object[]> list = new ArrayList<>();

@@ -1,4 +1,4 @@
-package start.test;
+package start.spring;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,7 +12,7 @@ import javax.annotation.Resource;
  * @auther: Meruem117
  */
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration("classpath:jdbc.xml")
+@ContextConfiguration("classpath:spring-jdbc.xml")
 public class JUnit5Test {
     @Resource
     private UserService userService;

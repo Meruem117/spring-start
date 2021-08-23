@@ -1,4 +1,4 @@
-package start.test;
+package start.spring;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -23,7 +23,7 @@ import start.spring.ioc.service.annotation.BaseService;
 public class IOCTest {
     @Test
     public void TestUser1() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         User1 user = context.getBean("user1", User1.class);
         System.out.println(user);
         user.test();
@@ -31,7 +31,7 @@ public class IOCTest {
 
     @Test
     public void TestUser2() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         User2 user = context.getBean("user2", User2.class);
         System.out.println(user);
         user.test();
@@ -39,7 +39,7 @@ public class IOCTest {
 
     @Test
     public void TestUser3() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         User3 user = context.getBean("user3", User3.class);
         System.out.println(user);
         user.test();
@@ -47,35 +47,35 @@ public class IOCTest {
 
     @Test
     public void TestUser() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         UserService userService = context.getBean("userService", UserService.class);
         userService.service();
     }
 
     @Test
     public void TestStudent() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         Student student = context.getBean("student", Student.class);
         student.test();
     }
 
     @Test
     public void TestCollection() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         Course course = context.getBean("course", Course.class);
         course.test();
     }
 
     @Test
     public void TestFactory() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         User user = context.getBean("factory", User.class);
         System.out.println(user);
     }
 
     @Test
     public void TestLife() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         Life life = context.getBean("life", Life.class);
         System.out.println(4);
         ((ClassPathXmlApplicationContext) context).close();
@@ -83,21 +83,21 @@ public class IOCTest {
 
     @Test
     public void TestAutowire() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         Employee employee = context.getBean("employee", Employee.class);
         System.out.println(employee);
     }
 
     @Test
     public void TestBase() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         Base base = context.getBean("base", Base.class);
         base.test();
     }
 
     @Test
     public void TestBaseService() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("ioc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-ioc.xml");
         BaseService baseService = context.getBean("baseService", BaseService.class);
         baseService.test();
     }

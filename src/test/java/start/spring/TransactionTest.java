@@ -1,4 +1,4 @@
-package start.test;
+package start.spring;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -16,23 +16,23 @@ import java.util.List;
 public class TransactionTest {
     @Test
     public void testTransaction() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("jdbc.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-jdbc.xml");
         AccountService accountService = context.getBean("accountService", AccountService.class);
-        // accountService.transMoney();
-        List<Account> list = accountService.getAccounts();
-        for (Account account : list) {
-            System.out.println(account);
-        }
+        accountService.transMoney();
+        // List<Account> list = accountService.getAccounts();
+        // for (Account account : list) {
+        //     System.out.println(account);
+        // }
     }
 
     @Test
     public void testTransactionConfig() {
         ApplicationContext context = new AnnotationConfigApplicationContext(TxConfig.class);
         AccountService accountService = context.getBean("accountService", AccountService.class);
-        // accountService.transMoney();
-        List<Account> list = accountService.getAccounts();
-        for (Account account : list) {
-            System.out.println(account);
-        }
+        accountService.transMoney();
+        // List<Account> list = accountService.getAccounts();
+        // for (Account account : list) {
+        //     System.out.println(account);
+        // }
     }
 }

@@ -1,4 +1,4 @@
-package start.test;
+package start.spring;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +16,7 @@ import javax.annotation.Resource;
  * @auther: Meruem117
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:jdbc.xml")
+@ContextConfiguration("classpath:spring-jdbc.xml")
 public class JUnit4Test {
 
     @Test
